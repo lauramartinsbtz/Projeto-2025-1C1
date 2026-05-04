@@ -6,8 +6,8 @@ programa
 	
 	
 logico l
-	inteiro opcao, can1 = 0, can2 = 0, can3 = 0
-	real total = 0.0, resultado1, resultado2, resultado3
+	inteiro opcao, can1 = 0, can2 = 0, can3 = 0, total = 0
+	real resultado1, resultado2, resultado3
 	
 	funcao inicio()
 	{
@@ -30,15 +30,15 @@ logico l
 			
 				caso 1:
 					can1 += 1
-					resultado1 = (can1 / total) * 100	
+					
 					pare
 				caso 2:
 					can2 += 1
-					resultado2 = (can2 / total ) * 100
+					
 					pare
 				caso 3:
 					can3 += 1
-					resultado3 = (can3 / total) * 100
+					
 					pare
 		
 				caso 0:
@@ -50,6 +50,12 @@ logico l
 					escreva("\nOpção não encontrada!")
 					u.aguarde(1000)
 			}
+				se(total > 0){
+			resultado1 = (can1 / total) * 100
+			resultado2 = (can2 / total) * 100
+			resultado3 = (can3 / total) * 100
+		}
+
 			escreva("\nCandidato 1: ",m.arredondar(resultado1, 2),"% dos votos.")
 			escreva("\nCandidato 2: ",m.arredondar(resultado2, 2),"% dos votos.")
 			escreva("\nCandidato 3: ",m.arredondar(resultado3, 2),"% dos votos.")
@@ -63,7 +69,7 @@ logico l
 	funcao finalizar()
 	{
 
-		escreva("\nO total de votos foi: ",total)
+		escreva("\nO total de votos foi: ",total, " votos.")
 
 		l = falso
 	}
